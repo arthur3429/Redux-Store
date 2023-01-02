@@ -1,15 +1,20 @@
 import "./App.css";
 import Header from "./components/header";
-import Banner from "./components/banner"
-import Products from "./components/products";
+import Home from "./pages/home/home";
+import Footer from "./components/footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProductPage from "./pages/product-page/index.jsx";
 
 const App = () => {
   return (
-    <div>
+    <Router>
       <Header />
-      <Banner />
-      <Products />
-    </div>
+        <Routes>
+          <Route exact path="/" element={<Home />}/>
+          <Route exact path="/product/:id" element={<ProductPage/>} />
+        </Routes>
+      <Footer />
+    </Router>
   );
 };
 

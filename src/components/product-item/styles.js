@@ -5,32 +5,52 @@ import styled from "styled-components";
 export const ProductContainer = styled.div`
   display: flex;
   flex-direction: column;
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+  width: 280px;
+  height: 440px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
 
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const ProductInfo = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-top: 5px;
+  height: 80px;
+  flex-direction: column;
 
-  p {
-    font-size: 1rem;
-    font-weight: 500;
+
+
+  p:nth-child(1) {     
+    font-family: 'Poppins';
+    margin: 10px 10px 0 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    /* identical to box height */
+    color: #444444;
+  }
+
+  p:nth-child(2) {   
+    font-family: 'Poppins';
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #878787;
   }
 `;
 
 export const ProductImage = styled.div`
   background-image: ${(props) => `url('${props.imageUrl}')`};
-  height: 380px;
-  width: 300px;
+  height: 360px;
+  width: 279px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 10px 0 0;
   display: flex;
   align-items: flex-end;
   transition: all 0.3s ease;
@@ -44,14 +64,14 @@ export const ProductImage = styled.div`
     margin: 20px;
   }
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: color;
+  &:hover { 
+
     cursor: pointer;
 
     button {
       visibility: visible;
       opacity: 1;
+      transform: translateY(0);
     }
   }
 

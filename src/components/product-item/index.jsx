@@ -1,5 +1,5 @@
-import { BsCartPlus } from "react-icons/bs";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { addProductToCart } from "../../redux/cart/actions";
 
 // Components
@@ -16,18 +16,26 @@ const ProductItem = ({ product }) => {
     dispatch(addProductToCart(product))
   }
 
+    // let a = product.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").split(" ")
+    // let b = a.join("-")
+
   return (
     <Styles.ProductContainer>
+      
       <Styles.ProductImage imageUrl={product.imageUrl}>
-        <CustomButton startIcon={<BsCartPlus />} onClick={handleProductClick}>
+        <CustomButton onClick={handleProductClick}>
           Adicionar ao carrinho
         </CustomButton>
       </Styles.ProductImage>
-
-      <Styles.ProductInfo>
-        <p>{product.name}</p>
-        <p>R${product.price}</p>
-      </Styles.ProductInfo>
+      
+      <Link to={'product/'+ product.id}>
+        <Styles.ProductInfo>
+          
+            <p>{product.name}</p>
+          
+          <p>R${product.price}</p>
+        </Styles.ProductInfo>
+      </Link>
     </Styles.ProductContainer>
   );
 };

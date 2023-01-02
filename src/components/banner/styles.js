@@ -7,6 +7,7 @@ export const Banner = styled.div`
     display: flex;
     justify-content: center;
     background-color: #fff;
+    
 
     .banner-wrapper {
         position: relative;
@@ -18,18 +19,30 @@ export const Banner = styled.div`
         align-items: center;
         background: rgba(217, 217, 217, 0.085);
         box-shadow: inset 90.6667px -90.6667px 90.6667px rgba(165, 165, 165, 0.085), inset -90.6667px 90.6667px 90.6667px rgba(255, 255, 255, 0.085);
-        backdrop-filter: blur(6.34667px);
+        backdrop-filter: blur(5px);
         border-radius: 50px;
         z-index: 1;
+        transition: all 1s;
     }
+
+
 
     .image-container {
         max-width: 1800px;
-        width: 100%;
+        width: 90%;
         height: calc(100% - 60px);
         margin: 0 30px;
         padding: 10px;
         position: absolute;        
+        transform: translateX(4%);
+        opacity: 0;
+        transition: all 1s ease-in-out 2.8s;
+        
+    }
+
+    .image-container.loaded {
+        transform: translateX(0);
+        opacity: 1;
     }
 
     .image-wrapper {
@@ -57,7 +70,9 @@ export const Banner = styled.div`
         font-style: normal;
         font-weight: 500;
         font-size: 64px;
-        
+        transform: translateY(40%);
+        transition: all 1s ease-in-out 1.2s;
+        opacity: 0;
         text-transform: uppercase;
         color: #272727;
     }
@@ -67,9 +82,16 @@ export const Banner = styled.div`
         font-style: normal;
         font-weight: 400;
         font-size: 30px;
-        
+        transform: translateY(40%);
+        transition: all 1s ease-in-out 2s;
+        opacity: 0;
         text-transform: uppercase;
         color: #2C2C2C;
+    }
+
+    .text-container h1.loaded, .text-container h2.loaded {
+        transform: translateY(0px);
+        opacity: 1;
     }
 
     .text-container h2 strong {
@@ -81,6 +103,11 @@ export const Banner = styled.div`
         position: absolute;
         right: 45px;
         bottom: 45px;
+        transition: all 0.4s ease-in-out 0.6s;
+    }
+
+    .redux-icon:hover {
+        transform: rotate(360deg) scale(1.3);
     }
 
     @media (max-width: 1312px) {
@@ -99,6 +126,7 @@ export const Banner = styled.div`
             width: 65%;
             margin: 0;
             padding: 0;
+            transform: translateX(0);
         }
 
         .image-wrapper {

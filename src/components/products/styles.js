@@ -1,13 +1,19 @@
 import styled from "styled-components";
 
+export const Hold = styled.div`
+  background: #F5F6F8;
+`
+
 export const Container = styled.div`
   margin: 0 auto;
-  display: grid;
   max-width: 1290px;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: start;
-  padding: 40px 0 40px 40px;
-  grid-row-gap: 20px;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
 
   @media (max-width: 768px) {
     display: flex;
@@ -17,11 +23,14 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   max-width: 1290px;
+  padding: 60px 0 30px 0;
   width: 100%;
-  margin: 20px auto -20px auto;
-  padding-left: 40px;
-  font-size: 24px;
-  color: #252525;
-  font-weight: 600;
+  margin: 0 auto;
+  font-size: 30px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  color: #272727;
+  text-align: center;
   
 `
