@@ -1,4 +1,4 @@
-// Styles
+import { AiOutlineClose } from "react-icons/ai";
 import * as Styles from "./styles";
 
 import { useSelector } from "react-redux";
@@ -17,13 +17,21 @@ const Cart = ({ isVisible, setIsVisible }) => {
     <Styles.CartContainer isVisible={isVisible}>
       <Styles.CartEscapeArea onClick={handleEscapeAreaClick} />
       <Styles.CartContent>
-        <Styles.CartTitle>Seu Carrinho</Styles.CartTitle>
+        <Styles.CartTitle>Seu Carrinho <AiOutlineClose onClick={handleEscapeAreaClick} size={32} />
+        </Styles.CartTitle>
+        <div className="map">
+          {products.map((product) => {
+            return <CartItem product={product} />
+          })}
+        </div>
 
-        {products.map((product) => {
-          return <CartItem product={product} />
-        })}
-
-        <Styles.CartTotal>R${productsTotalPrice}</Styles.CartTotal>
+        <div className="price-checkout">
+          <Styles.CartTotal>
+            <p>Total:</p>
+            <p>R${productsTotalPrice},00</p>
+          </Styles.CartTotal>
+          <button>Finalizar Compra</button>
+        </div>
       </Styles.CartContent>
     </Styles.CartContainer>
   );

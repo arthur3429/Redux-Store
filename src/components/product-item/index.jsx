@@ -16,19 +16,16 @@ const ProductItem = ({ product }) => {
     dispatch(addProductToCart(product))
   }
 
-    // let a = product.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").split(" ")
-    // let b = a.join("-")
-
   return (
     <Styles.ProductContainer>
-      
+      <CustomButton onClick={handleProductClick}>
+        Adicionar ao carrinho
+      </CustomButton>
+
+      <Link to={'product/'+ product.id}>
       <Styles.ProductImage imageUrl={product.imageUrl}>
-        <CustomButton onClick={handleProductClick}>
-          Adicionar ao carrinho
-        </CustomButton>
       </Styles.ProductImage>
       
-      <Link to={'product/'+ product.id}>
         <Styles.ProductInfo>
           
             <p>{product.name}</p>

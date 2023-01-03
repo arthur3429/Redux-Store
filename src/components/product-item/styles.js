@@ -10,9 +10,28 @@ export const ProductContainer = styled.div`
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
 
   a {
     text-decoration: none;
+  }
+
+
+  button {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  &:hover { 
+
+    cursor: pointer;
+
+    button {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `;
 
@@ -57,23 +76,6 @@ export const ProductImage = styled.div`
   background-color: transparent;
   background-blend-mode: color;
 
-  button {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s ease;
-    margin: 20px;
-  }
-
-  &:hover { 
-
-    cursor: pointer;
-
-    button {
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   @media (max-width: 768px) {
     width: 100%;

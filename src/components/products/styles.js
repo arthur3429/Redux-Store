@@ -19,6 +19,11 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
   }
+
+  @media (max-width: 425px) {
+    gap: 15px;
+    padding: 20px 20px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -33,4 +38,8 @@ export const Title = styled.h1`
   color: #272727;
   text-align: center;
   
+  @media (max-width: 425px) {
+    padding: 40px 0 20px 0;
+    font-size: 8vw
+  }
 `

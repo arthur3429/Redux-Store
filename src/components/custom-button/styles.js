@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CustomButtonContainer = styled.button`
   padding: 7px 20px;
-  width: 100%;
+  width: calc(100% - 20px);
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(1px);
@@ -14,6 +14,10 @@ export const CustomButtonContainer = styled.button`
   font-size: 16px;
   color: #262626;
   transform: translateY(15px);
+  position: absolute;
+  opacity: 0;
+  bottom: 90px;
+  left: 10px;
 
   &:hover {
     cursor: pointer;
