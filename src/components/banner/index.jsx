@@ -14,7 +14,7 @@ const Banner = () => {
     <Styles.Banner>
         <div className={isActive ? 'image-container loaded' : 'image-container'}>
             <div className="image-wrapper">
-            <img src="/imagens.png" alt="Moça na pose" />
+            <img src={process.env.PUBLIC_URL +"/imagens.png"} alt="Moça na pose" />
             </div>
         </div>
         <div className="banner-wrapper">

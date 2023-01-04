@@ -26,7 +26,7 @@ function Header() {
         <div className="header-wrapper">
         <Styles.Logo>
           <Link to="/">
-            <img src="/logo.png" alt="Logo" />
+            <img src={process.env.PUBLIC_URL + "/logo.png"} alt="Logo" />
           </Link>
         </Styles.Logo>
         <Styles.Buttons>

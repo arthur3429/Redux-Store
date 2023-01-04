@@ -7,7 +7,7 @@ function Footer() {
     <Styles.Footer>
       <div className="wrap">
         <div className="logo">
-          <img src="/logo.png" alt="logo" />
+          <img src={process.env.PUBLIC_URL + "/logo.png"} alt="logo" />
         </div>
       
         <div className="social">
