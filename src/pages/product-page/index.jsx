@@ -7,7 +7,7 @@ import { addProductToCart } from "../../redux/cart/actions";
 
 const ProductPage = (  ) => {
     const params = useParams()
-    let product = products.filter(data => data.id == params.id)
+    let product = products.filter(data => data.id === params.id)
     product = product[0]
     
     const dispatch = useDispatch()
@@ -28,7 +28,7 @@ const ProductPage = (  ) => {
       <div className="wrapper">
         <div className={isActive ? "container active" : "container"}>
           <div className="image-container">
-            <img src={product.imageUrl} alt="image" />
+            <img src={product.imageUrl} alt="non-reduntant-name" />
           </div>
 
           <div className="product-details">

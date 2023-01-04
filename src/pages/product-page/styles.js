@@ -36,7 +36,6 @@ export const ProductInformation = styled.div`
         gap: 30px;
         transition: opacity 0.9s ease-in-out;
         opacity: 0;
-
     }
 
     .container.active {
